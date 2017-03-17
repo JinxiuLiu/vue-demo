@@ -23,6 +23,42 @@ var proxyTable = config.dev.proxyTable
 var app = express()
 var compiler = webpack(webpackConfig)
 
+// 引入数据
+var appData = require('../data.json');
+var seller = appData.seller;
+var goods = appData.goods;
+var ratings = appData.ratings;
+
+// 路由
+var apiRoutes = express.Router();
+
+// 获取seller数据
+apiRoutes.get('/seller', function(req, res) {
+  res.json({
+    errno: 0,
+    data: seller
+  });
+});
+
+// 获取goods数据
+apiRoutes.get('/goods', function(req, res) {
+  res.json({
+    errno: 0,
+    data: goods
+  });
+});
+
+// 获取ratings数据
+apiRoutes.get('/ratings', function(req, res) {
+  res.json({
+    errno: 0,
+    data: ratings
+  });
+});
+
+app.use('/api', apiRoutes);
+
+
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true

@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="ratings">
     	ratings!
     </div>
 </template>

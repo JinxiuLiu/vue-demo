@@ -22,5 +22,7 @@
 
 .bg-image(@url) {
     background-image: url(@url);
-    
+    @media (-webkit-min-devive-pixel-ratio: 3), (min-devive-pixel-ratio: 3) {
+        background-image: url(@url);
+    }
 }

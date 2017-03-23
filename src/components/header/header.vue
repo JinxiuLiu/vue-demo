@@ -52,7 +52,7 @@
 				.brand {
 					display: inline-block;
 					width: 30px;
-					heright: 18px;
+					height: 18px;
 					background-image: url('brand@2x.png');
 					background-size: 30px 18px;
 					background-repeat: no-repeat;
